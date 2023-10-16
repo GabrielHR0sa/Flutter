@@ -15,13 +15,20 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Material(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(title: Text('Home')),
+      body: Center(
         child: Text('Hello World'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('Clicou');
+        },
       ),
     );
   }
